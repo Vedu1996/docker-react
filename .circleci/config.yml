@@ -1,0 +1,6 @@
+version: 2.1
+jobs:
+  build:
+    steps:
+      - run: docker build -t vedant.l/docker-react -f Dockerfile.dev .
+      - run: docker run -e CI=true vedant.l/docker-react npm run test
